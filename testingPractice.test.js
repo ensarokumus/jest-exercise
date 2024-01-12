@@ -14,3 +14,8 @@ test("Capitalised the first character", () => {
   expect(capitalise(" gotcha")).toMatch(/ gotcha/);
   expect(capitalise("7news")).toMatch(/7news/);
 });
+
+test("Reversed the string", () => {
+  expect(reverseString("team")).toMatch(/maet/); 
+  expect(reverseString("the quick brown fox ")).toMatch(/ xof nworb kciuq eht/); 
+});
