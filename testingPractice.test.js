@@ -2,6 +2,7 @@ import sum from "./sum";
 import capitalise from "./capitalise";
 import reverseString from "./reverseString";
 import calculator from "./calculator";
+import caesarCipher from "./caesarCipher";
 
 test("adds 1 + 2 to equal 3", () => {
   expect(sum(1, 2)).toBe(3);
@@ -30,4 +31,18 @@ test("Calculator works", () => {
   expect(calculator.divide(-1, 2)).toBeCloseTo(-0.5);
   expect(calculator.multiply(4, 5)).toBeCloseTo(20);
   expect(calculator.multiply(4, 0)).toBeCloseTo(0);
+});
+
+const unencrypted =
+  "Z Julius Caesar used the Shift Cipher!";
+
+const encrypted =
+  "B Lwnkwu Ecguct wugf vjg Ujkhv Ekrjgt!";
+
+test("caesarCipher works wrapping from z to a", () => {
+  expect(caesarCipher(unencrypted, 2)).toBe(encrypted);
+});
+
+test("caesarCipher works for keeping the same case", () => {
+  expect(caesarCipher(unencrypted, 2)).toBe(encrypted);
 });
